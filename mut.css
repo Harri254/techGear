@@ -1,0 +1,146 @@
+element.style {
+    --color-primary-rgba: rgba(33, 51, 115, 0.25);
+    --color-primary: #66c743;
+    --color-tab: #1d2aed;
+    --color-secondary: #9d0101;
+}
+:root {
+    --prm-color: var(--color-primary);
+    --prm-gray: #b1b1b1;
+}
+:root {
+    --color-primary: #213373;
+    --color-secondary: #1B85FB;
+    --color-tab: #ED1E24;
+    --color-white: #fff;
+    --color-light: #D3D3D3;
+    --color-light-green: rgba(65, 191, 115, .16);
+    --color-light-blue: rgba(64, 142, 239, .16);
+    --color-light-gray: #D6D6D6;
+    --color-black: #000000;
+    --color-dark: rgba(0, 0, 0, .6);
+    --color-light-header: #F8F9FA;
+    --color-border: #dee2e6;
+    --color-link-dark: #707070;
+    --color-border-dropdown: rgb(0 0 0 / 18%);
+    --color-notify-purple: #6D65F8;
+    --color-notify-aqua: #23C4F9;
+    --color-notify-green: #1EAD95;
+    --color-notify-pink: #EB86ED;
+    --box-shadow-btn: 0 1rem 2rem rgba(0, 0, 0, .175);
+    --transition: all 400ms ease;
+    --color-primary-rgba: rgb(13 110 253 / 25%);
+}
+:host, :root {
+    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+}
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+Show all properties (16 more)
+}
+* {
+    box-sizing: border-box;
+}
+* {
+    /* text-decoration: none; */
+    list-style: none;
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+html[Attributes Style] {
+    -webkit-locale: "en";
+}
+user agent stylesheet
+:root {
+    view-transition-name: root;
+}
+user agent stylesheet
+html {
+    display: block;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: .25rem;
+}
+::-webkit-scrollbar-button {
+    background: #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-dark);
+    border-radius: .5rem;
+    width: 5rem;
+}
+::-webkit-scrollbar-track-piece {
+    background: #ccc;
+}
+::selection {
+    color: var(--color-white);
+    background: var(--color-primary);
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechGear</title>
+    <style>
+        /* Importing the same styles as the main page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .logo span {
+            color: #e74c3c;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+        .about-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .team-grid {
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .team-member {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .team-member h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            height: 4px;
+            width: 100px;
+            background: #e74c3c;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .values-grid {
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .value-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .value-card i {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .testimonials {
+            background: #eee;
+            padding: 3rem 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #1a252f;
+            color: #fff;
+            padding: 3rem 0 1rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #2c3e50;
+                width: 100%;
+                display: none;
+                padding: 20px 0;
+            }
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Tech<span>Gear</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="tutorials.html">Video Tutorials</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section container">
+        <h2>About TechGear</h2>
+        <p>
+            At TechGear, we are passionate about bringing you the latest and greatest in technology. Founded in 2020, our mission has always been to provide high-quality electronics at unbeatable prices. 
+            Whether you're looking for cutting-edge gadgets or reliable everyday tech, we've got you covered.
+        </p>
+        <p>
+            Our team is dedicated to ensuring a seamless shopping experience for our customers. From product selection to customer support, we strive to exceed your expectations every step of the way.
+        </p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="container">
+        <h2 class="section-title">Our Story</h2>
+        <p>
+            TechGear was founded by John Doe in 2020 with a simple idea: to make technology accessible to everyone. Starting from a small garage, we have grown into a global brand trusted by millions of customers. 
+            Our journey has been marked by innovation, hard work, and a relentless focus on quality.
+        </p>
+        <p>
+            Over the years, we have introduced groundbreaking products, expanded our reach, and built a community of tech enthusiasts who share our passion for innovation.
+        </p>
+    </section>
+
+    <!-- Core Values -->
+    <section class="container">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>We believe in pushing boundaries and exploring new possibilities in technology.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Trust</h3>
+                <p>Building trust with our customers is at the heart of everything we do.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-globe"></i>
+                <h3>Sustainability</h3>
+                <p>We are committed to reducing our environmental impact and promoting sustainable practices.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-globe"></i>
+                <h3>Sustainability</h3>
+                <p>We are committed to reducing our environmental impact and promoting sustainable practices.</p>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <!-- Team Section -->
+    <section class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/team1.jpg.jpeg" alt="James Brunt">
+                <h3>James Brunt</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team2.jpg.jpeg" alt="Samira Mohammed">
+                <h3>Samira Mohammed</h3>
+                <p>Product Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team3.jpg.jpeg" alt="Alex Johnson">
+                <h3>Alex Johnson</h3>
+                <p>Customer Support Lead</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team4.jpg.jpeg" alt="Jade Mainge">
+                <h3>Jade Mainge</h3>
+                <p>Customer Support Lead</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="images/cus-1.jpg.jpeg" alt="Customer 1">
+                    <p>"TechGear has the best selection of gadgets. I love their fast shipping and excellent customer service!"</p>
+                    <h4>- Sarah L.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/cus2.jpg.jpeg" alt="Customer 2">
+                    <p>"I've been a loyal customer for years. Their products are reliable, and the prices are unbeatable."</p>
+                    <h4>- Mark T.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/cus3.jpg.jpeg" alt="Customer 3">
+                    <p>"The video tutorials on their website are incredibly helpful. Highly recommend TechGear!"</p>
+                    <h4>-Dwayne Martin</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/cus4.jpg.jpeg" alt="Customer 3">
+                    <p>"I highly recommend TechGear for your technological needs💯!"</p>
+                    <h4>- Emily R.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Involvement -->
+    <section class="container">
+        <h2 class="section-title">Community Involvement</h2>
+        <p>
+            At TechGear, we believe in giving back to the community. We partner with local schools and organizations to promote STEM education and provide resources for underserved communities.
+        </p>
+        <p>
+            Every year, we host workshops, donate products, and sponsor events to inspire the next generation of innovators.
+        </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h3>What makes TechGear different?</h3>
+                <p>We focus on delivering high-quality products at competitive prices while maintaining exceptional customer service.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer international shipping?</h3>
+                <p>Yes, we ship to over 50 countries worldwide. Shipping fees and delivery times vary depending on the destination.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I contact customer support?</h3>
+                <p>You can reach us via email at support@techgear.com or call our toll-free number at 1-800-TECHGEAR.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechGear. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

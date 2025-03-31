@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - TechGear</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #e74c3c;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+        
+        /* Page Title */
+        .page-title {
+            background-color: #34495e;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .breadcrumb {
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        
+        /* Filter and Sort */
+        .filter-sort {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-options, .sort-options {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .filter-options span, .sort-options span {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        .filter-btn, .sort-select {
+            padding: 8px 12px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .sort-select:hover {
+            border-color: #e74c3c;
+        }
+        
+        .active-filter {
+            background-color: #e74c3c;
+            color: #fff;
+            border-color: #e74c3c;
+        }
+        
+        /* Products Grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .product {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .product:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #f39c12;
+            margin-right: 5px;
+        }
+        
+        .rating-count {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .page-item {
+            margin: 0 5px;
+        }
+        
+        .page-link {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .page-link:hover {
+            background-color: #eee;
+        }
+        
+        .active .page-link {
+            background-color: #e74c3c;
+            color: #fff;
+            border-color: #e74c3c;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #e74c3c;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-sort {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .filter-options, .sort-options {
+                margin-bottom: 10px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #2c3e50;
+                width: 100%;
+                display: none;
+                padding: 20px 0;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Tech<span>Gear</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="tutorials.html">Video Tutorials</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>All Products</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Products
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Filtering and Sorting -->
+    <div class="container">
+        <div class="filter-sort">
+            <div class="filter-options">
+                <span>Filter by:</span>
+                <button class="filter-btn active-filter">All</button>
+                <button class="filter-btn">Smartphones</button>
+                <button class="filter-btn">Laptops</button>
+                <button class="filter-btn">Audio</button>
+                <button class="filter-btn">Smart Home</button>
+            </div>
+            <div class="sort-options">
+                <span>Sort by:</span>
+                <select class="sort-select">
+                    <option>Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest First</option>
+                    <option>Best Selling</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product">
+                <div class="product-img">
+                    <img src="images/headphones.jpg" alt="Wireless Headphones">
+                    <div class="product-badge">SALE</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Audio</div>
+                    <h3 class="product-title">Premium Wireless Headphones</h3>
+                    <div class="product-price">
+                        $129.99
+                        <span class="original-price">$159.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-count">(128)</div>
+                    </div>
+                    <a href="#" class="btn add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product">
+                <div class="product-img">
+                    <img src="images/fitness-tracker.webp" alt="Smartwatch">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Wearables</div>
+                    <h3 class="product-title">Smart Fitness Watch</h3>
+                    <div class="product-price">$89.99</div>
+                    <div class="product-rating">
+                        <div class="stars">★★★★☆</div>
+                        <div class="rating-count">(96)</div>
+                    </div>
+                    <a href="#" class="btn add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product">
+                <div class="product-img">
+                    <img src="images/best-waterproof-speakers-202108-medium.jpg" alt="Bluetooth Speaker">
+                    <div class="product-badge">NEW</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Audio</div>
+                    <h3 class="product-title">Waterproof Bluetooth Speaker</h3>
+                    <div class="product-price">$49.99</div>
+                    <div class="product-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-count">(64)</div>
+                    </div>
+                    <a href="#" class="btn add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product">
+                <div class="product-img">
+                    <img src="images/61JSHC3pzeL.jpg" alt="Wireless Charger">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-title">Fast Wireless Charger</h3>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-rating">
+                        <div class="stars">★★★★☆</div>
+                        <div class="rating-count">(42)</div>
+                    </div>
+                    <a href="#" class="btn add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+            
+            <!-- Product 5

@@ -1,2 +1,1 @@
-# Marangu
-techGear
+# techGear
